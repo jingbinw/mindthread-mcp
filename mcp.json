@@ -1,0 +1,25 @@
+{
+  "name": "mindthread-mcp",
+  "version": "0.1.0",
+  "description": "MindThread MCP Server: semantic time-travel for evolving ideas (Notion integration mock).",
+  "license": "MIT",
+  "server": {
+    "command": "node",
+    "args": ["dist/index.js"],
+    "env": {}
+  },
+  "tools": [
+    {
+      "name": "capture_idea",
+      "description": "Capture a raw idea text; returns extracted theme, emotion, and normalized structure."
+    },
+    {
+      "name": "find_related_thoughts",
+      "description": "Given an idea or note id/text, retrieve semantically and temporally related historical thoughts."
+    },
+    {
+      "name": "timeline_reconnect",
+      "description": "Generate a semantic evolution timeline for a concept across past notes."
+    }
+  ]
+}
