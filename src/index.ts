@@ -6,11 +6,11 @@ import { ListToolsRequestSchema, CallToolRequestSchema } from '@modelcontextprot
 import { autoLoadNotes } from './notion/loader.js';
 import { MemoryStore } from './store/memoryStore.js';
 import { IdeaTools } from './tools/ideas.js';
-import { loadEnvFile } from './config/env.js';
+import dotenv from 'dotenv';
 
 async function bootstrap() {
-  // Load .env early (won't override existing env vars)
-  loadEnvFile();
+  // Load .env early using dotenv
+  dotenv.config();
   const ServerCtor: any = (serverIndex as any).Server;
   if (!ServerCtor) {
     throw new Error('Server class not found in SDK');

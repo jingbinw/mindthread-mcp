@@ -31,7 +31,17 @@ Runs over STDIO (MCP compliant).
 
 Note: Currently using internal SDK path `server/index.js` and the `Server` class. If the SDK export map changes, inspect `node_modules/@modelcontextprotocol/sdk/dist/server/index.js`.
 
-### 3. Configure Claude Desktop (example)
+### 3. Run a quick local test
+```bash
+npm test
+```
+or
+```bash
+bash scripts/local-test.sh
+```
+It quickly verifies MCP server builds and responds correctly to JSON-RPC requests. 
+
+### 4. Configure Claude Desktop (example)
 Add to `claude_desktop_config.json`:
 ```jsonc
 {
@@ -46,7 +56,7 @@ Add to `claude_desktop_config.json`:
 ```
 Restart Claude Desktop to auto-discover the server.
 
-### 3.1 Alternative: use provided config template
+### 4.1 Alternative: use provided config template
 This repository includes `claude_mcp.config.example.json`. Copy or merge its `mcpServers` section into your Claude Desktop config file. On macOS (default install) the file usually lives at:
 
 ```
@@ -62,7 +72,7 @@ Steps:
 
 Security tip: Prefer setting secrets in the Claude config `env` block or in your shell rather than committing a real `.env` to version control.
 
-### 4. Tool invocation examples (pseudo JSON-RPC)
+### 5. Tool invocation examples (pseudo JSON-RPC)
 Capture a new idea:
 ```json
 {
